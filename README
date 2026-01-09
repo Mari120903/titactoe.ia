@@ -1,0 +1,46 @@
+# Tic-Tac-Toe with AI (Minimax & Explainable Decisions)
+
+Command-line Tic-Tac-Toe game implemented in Python, featuring an AI opponent powered by the **Minimax algorithm** with multiple difficulty levels and transparent decision-making.
+
+## Overview
+This project implements a classic Tic-Tac-Toe game where a human player competes against an AI. The AI evaluates game states using Minimax and provides **explicit reasoning output**, explaining why certain moves are chosen, blocked, or avoided.
+
+The focus of the project is not only correctness, but also **explainability of AI behavior**, making the decision process observable and understandable.
+
+## Features
+- Human vs AI gameplay in the terminal
+- AI powered by Minimax with memoization
+- Three difficulty levels:
+  - **Easy**: AI frequently makes suboptimal moves
+  - **Medium**: AI mixes optimal and random decisions
+  - **Hard**: AI always plays optimally
+- Explicit AI reasoning:
+  - Detects immediate winning moves
+  - Detects and blocks human threats
+  - Prints evaluation scores for each possible move
+- Clear board visualization and input validation
+
+## AI Logic
+The AI uses the Minimax algorithm to evaluate all possible future game states:
+- Win for AI: +1
+- Win for Human: -1
+- Draw: 0
+
+To improve performance, previously evaluated states are cached using memoization.
+
+Before committing to a move, the AI:
+1. Checks for immediate winning moves
+2. Detects human threats that must be blocked
+3. Evaluates all valid moves using Minimax
+4. Selects the best move depending on the chosen difficulty
+
+## Technologies
+- Python 3
+- Minimax algorithm
+- Recursive game tree evaluation
+- Memoization
+- Basic CLI interaction
+
+## How to Run
+```bash
+python tictactoe.py
